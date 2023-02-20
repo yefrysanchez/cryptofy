@@ -1,0 +1,8 @@
+[] create coin full info page
+[] Login Modal
+
+
+[]add funcionality from API
+[]add watchlist funcionality
+
+[] Add auth0 and google authentification 
