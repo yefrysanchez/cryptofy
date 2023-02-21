@@ -1,9 +1,10 @@
 import React from "react";
+import Watch from "./Watch";
 
 const TableRow = () => {
   return (
     <tr className="border-b-2 duration-200 hover:bg-indigo-500 shadow-md hover:shadow-indigo-700">
-      <td className="py-4 text-center ">star</td>
+      <td className="py-4 text-center "><Watch/></td>
       <td className="py-4 text-center ">1</td>
       <td className="py-4 text-center flex justify-around ">
         <div className="w-6 h-6 rounded-full overflow-hidden">

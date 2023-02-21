@@ -1,6 +1,6 @@
-[] create coin full info page
+[x] create coin full info page
 [] Login Modal
-
+[-] search Modal
 
 []add funcionality from API
 []add watchlist funcionality
