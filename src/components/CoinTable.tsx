@@ -1,4 +1,5 @@
 import React from "react";
+import { Data } from "../context/ApiContext";
 import TableRow from "./TableRow";
 
 const CoinTable = () => {
@@ -18,8 +19,9 @@ const CoinTable = () => {
           </tr>
         </thead>
         <tbody>
-          <TableRow />
-          <TableRow />
+          <Data>
+            <TableRow />
+          </Data>
         </tbody>
       </table>
     </section>

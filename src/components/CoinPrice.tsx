@@ -1,25 +1,31 @@
 import React from "react";
 
-const CoinPrice = () => {
+const CoinPrice = ({ coin }) => {
   return (
-    <div className="bg-indigo-900 p-4 rounded-lg w-fit ">
-      <div className="mb-12 mt-4">
-        <h1 className="text-4xl font-bold mb-2">Bitcoin</h1>
-        <h2 className="text-3xl">$24,769.10</h2>
+    <div className=" bg-indigo-900 p-4 rounded-lg ">
+      <div className="flex justify-center items-center gap-2 mb-12 mt-4">
+        <div className="w-1/2 h-1/2 bg-white rounded-full">
+          <img
+            className="w-full h-full object-cover"
+            src={coin.image?.large}
+            alt=""
+          />
+        </div>
+        <div>
+          <h1 className="text-4xl font-bold ">{coin.name} </h1>
+          <span className="font-light text-xl">
+            ({coin.symbol?.toUpperCase()}/USD)
+          </span>
+          <h2 className="text-3xl">
+            $
+            {coin.market_data?.current_price
+              ? coin.market_data?.current_price.usd.toLocaleString()
+              : "N/A"}
+          </h2>
+        </div>
       </div>
-      <div className="flex">
-        <div className="mr-8">
-          <p className="text-slate-400">Today</p>
-          <p>+1.2%</p>
-        </div>
-        <div className="mr-8 border-l pl-4">
-          <p className="text-slate-400">7 days</p>
-          <p>+4.3%</p>
-        </div>
-        <div className="mr-8 border-l pl-4">
-          <p className="text-slate-400">30 days</p>
-          <p>-11.8%</p>
-        </div>
+      <div className="flex text-center">
+        
       </div>
     </div>
   );
