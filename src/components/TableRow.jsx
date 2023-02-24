@@ -5,18 +5,6 @@ import { apiContext } from "../context/ApiContext";
 
 
 const TableRow = () => {
-  interface Coin {
-    market_cap_rank: number;
-    image: string;
-    name: string;
-    symbol: string;
-    current_price: number;
-    price_change_percentage_24h: number;
-    high_24h: number;
-    low_24h: number;
-    market_cap: number;
-    id: string;
-  }
 
   const { coins } = useContext(apiContext);
 

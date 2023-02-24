@@ -1,7 +1,7 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Watch = ({ coin }) => {
+const Watch = () => {
   const notify = () => toast("Still working on the Watchlist");
 
   return (

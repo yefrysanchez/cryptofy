@@ -1,5 +1,4 @@
 import React from "react";
-import { Data } from "../context/ApiContext";
 import Card from "./Card";
 
 const Trending = () => {
@@ -11,9 +10,7 @@ const Trending = () => {
         </h2>
       </div>
       <div className="flex overflow-x-scroll lg:overflow-visible lg:flex-wrap mt-8">
-        <Data>
-          <Card />
-        </Data>
+        <Card />
       </div>
     </div>
   );

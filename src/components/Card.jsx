@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Watch from "./Watch";
 
@@ -21,7 +21,7 @@ const Card = () => {
             <Link key={e.item.id} to={`/coin/${e.item.id}`}>
               <div className="border relative hover:border-indigo-500 cursor-pointer h-44 w-44 rounded-xl p-4 duration-200 hover:bg-indigo-500 shadow-md hover:shadow-indigo-700 flex-none mr-4 mb-4">
                 <div className="absolute right-2">
-                  <Watch />
+                  <Watch/>
                 </div>
                 <div className="h-12 w-12 bg-white border border-indigo-500 rounded-full  overflow-hidden mb-4">
                   <img

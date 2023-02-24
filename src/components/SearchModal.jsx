@@ -2,12 +2,8 @@ import React, { FunctionComponentElement, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Watch from "./Watch";
 
-interface propCoin {
-  close: Function;
-  name: string;
-}
 
-const SearchModal = ({ close, name }: propCoin) => {
+const SearchModal = ({ close, name }) => {
   const [coins, setCoins] = useState();
 
   useEffect(() => {

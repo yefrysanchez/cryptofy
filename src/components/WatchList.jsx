@@ -18,9 +18,6 @@ const WatchList = () => {
       ) : (
         <div className="flex overflow-x-scroll lg:overflow-visible lg:flex-wrap mt-8">
           <Card />
-          <Card />
-          <Card />
-          <Card />
         </div>
       )}
     </div>

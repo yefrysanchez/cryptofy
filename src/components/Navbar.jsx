@@ -2,7 +2,6 @@ import Banner from "./Banner";
 import { Link } from "react-router-dom";
 import SearchModal from "./SearchModal";
 import { useRef, useState } from "react";
-import { Data } from "../context/ApiContext";
 
 const Navbar = () => {
   const [searching, setSearching] = useState(false);
