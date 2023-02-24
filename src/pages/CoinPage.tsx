@@ -21,13 +21,14 @@ const CoinPage = () => {
   return (
     <div className="pb-8">
       <WatchList />
-      <div className="w-full flex-col lg:flex-row items-center flex mt-8 gap-8 ">
+      <div className="w-full flex-col lg:flex-row items-center px-4 md:px-0 flex mt-8 gap-8 ">
         <CoinPrice coin={coin} />
-        <div className="flex items-end justify-center bg-black w-full h-80 rounded-lg">
+        <div className="relative flex items-end justify-center  bg-black w-full h-80 rounded-lg">
           <Sparklines data={coin.market_data?.sparkline_7d.price}>
             <SparklinesLine color="blue" />
             <SparklinesSpots />
           </Sparklines>
+          <h2 className="absolute top-2 left-2 font-bold text-3xl">7 Days</h2>
         </div>
       </div>
       <div className="mt-8">

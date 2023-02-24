@@ -7,6 +7,10 @@ const Card = () => {
   const url = "https://api.coingecko.com/api/v3/search/trending";
 
   useEffect(() => {
+
+    
+
+
     const petition = fetch(url);
 
     petition

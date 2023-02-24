@@ -12,6 +12,7 @@ const AppRouter = () => {
         <Route path="/coin/:coinId" element={<CoinPage />}>
           <Route path=":coinId" />
         </Route>
+        <Route path="/account"  />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Data>
