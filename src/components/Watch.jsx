@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { WatchListContext } from "../context/WatchListContext";
 
 const Watch = ({ coin }) => {
-  const { setWatchList, setCoinData } = useContext(WatchListContext);
+  const { setWatchList, watchList } = useContext(WatchListContext);
 
   const onClick = () => {
     setWatchList((prev) => [
