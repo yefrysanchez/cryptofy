@@ -19,9 +19,6 @@ const SearchModal = ({ close, name }) => {
               key={coin.id}
               className="border-b-2 duration-200 hover:bg-indigo-500 shadow-md hover:shadow-indigo-700"
             >
-              <td className="py-4 text-center ">
-                <Watch />
-              </td>
               <td className="py-4 text-center ">{coin.market_cap_rank}</td>
               <td className="py-4 text-center flex justify-around ">
                 <div className="w-6 h-6 rounded-full bg-white overflow-hidden">
@@ -54,7 +51,6 @@ const SearchModal = ({ close, name }) => {
         <table className=" bg-indigo-900 w-full rounded-lg px-4 pb-8">
           <thead className="border-b-2">
             <tr className="lg:text-lg">
-              <th className="py-4">Watch</th>
               <th>Rank</th>
               <th>Name</th>
             </tr>

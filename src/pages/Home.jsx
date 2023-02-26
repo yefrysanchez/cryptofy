@@ -1,13 +1,16 @@
 import CoinTable from "../components/CoinTable";
 import Trending from "../components/Trending";
 import WatchList from "../components/WatchList";
+import { Context } from "../context/WatchListContext";
 
 const Home = () => {
   return (
     <>
-      <Trending />
-      <WatchList />
-      <CoinTable />
+      <Context>
+        <Trending />
+        <WatchList />
+        <CoinTable />
+      </Context>
     </>
   );
 };

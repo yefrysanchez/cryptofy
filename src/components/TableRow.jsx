@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import Watch from "./Watch";
 import { apiContext } from "../context/ApiContext";
 
-
 const TableRow = () => {
-
   const { coins } = useContext(apiContext);
+
+
 
   return (
     <>
@@ -16,10 +16,8 @@ const TableRow = () => {
             key={coin.id}
             className="border-b-2 duration-200 hover:bg-indigo-500 shadow-md hover:shadow-indigo-700"
           >
-            <td className="py-4 text-center ">
-          
-                <Watch coin={coin} />
-   
+            <td className="py-4 text-center">
+              <Watch coin={coin} />
             </td>
             <td className="py-4 text-center ">{coin.market_cap_rank}</td>
             <td className="py-4 text-center flex justify-around ">

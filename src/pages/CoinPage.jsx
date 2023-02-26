@@ -5,6 +5,7 @@ import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import { useParams } from "react-router-dom";
+import { Context } from "../context/WatchListContext";
 
 const CoinPage = () => {
   const [coin, setCoin] = useState({});
@@ -20,7 +21,9 @@ const CoinPage = () => {
 
   return (
     <div className="pb-8">
-      <WatchList />
+      <Context>
+        <WatchList />
+      </Context>
       <div className="w-full flex-col lg:flex-row items-center px-4 md:px-0 flex mt-8 gap-8 ">
         <CoinPrice coin={coin} />
         <div className="relative flex items-end justify-center  bg-black w-full h-80 rounded-lg">
