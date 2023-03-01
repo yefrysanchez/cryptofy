@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { WatchListContext } from "../context/WatchListContext";
-import Card from "./Card";
 import Remove from "./Remove";
 
 const WatchList = () => {
@@ -29,7 +28,8 @@ const WatchList = () => {
               <div
                 key={card.id}
                 className="border relative hover:border-indigo-500 cursor-pointer h-44 w-44 rounded-xl p-4 duration-200 hover:bg-indigo-500 shadow-md hover:shadow-indigo-700 flex-none mr-4 mb-4"
-              ><Remove />
+              >
+                <Remove coin={card} />
                 <Link to={`/coin/${card.id}`}>
                   <div className="h-12 w-12 bg-white border border-indigo-500 rounded-full  overflow-hidden mb-4">
                     <img

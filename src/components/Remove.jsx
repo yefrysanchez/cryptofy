@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { WatchListContext } from "../context/WatchListContext";
 
-const Remove = () => {
+const Remove = ({ coin }) => {
+  const { watchList, setWatchList } = useContext(WatchListContext);
+  const customId = "custom-id-yes";
   const onClick = () => {
-    toast("Still Working on It");
+    const removeCoin = watchList.filter((card) => card.id !== coin.id);
+    setWatchList(removeCoin);
+    toast("Coin removed succefully!", {
+      toastId: customId,
+    });
   };
 
   return (
@@ -11,7 +18,7 @@ const Remove = () => {
       onClick={onClick}
       className="absolute right-4 bg-red-700 text-white z-50 p-1 cursor-pointer rounded-lg"
     >
-      <button>Watch</button>
+      <button>Remove</button>
       <ToastContainer
         position="top-center"
         autoClose={2000}

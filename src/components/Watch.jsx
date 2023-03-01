@@ -5,19 +5,27 @@ import { WatchListContext } from "../context/WatchListContext";
 
 const Watch = ({ coin }) => {
   const { setWatchList, watchList } = useContext(WatchListContext);
-
+  const customId = "custom-id-yes";
   const onClick = () => {
-    setWatchList((prev) => [
-      ...prev,
-      {
-        id: coin.id,
-        name: coin.name,
-        img: coin.image,
-        symbol: coin.symbol,
-        price: coin.current_price,
-      },
-    ]);
-    toast("Coin added to the Watchlist successfully!");
+    if (watchList.find((item) => item.id === coin.id)) {
+      toast("Coin already in the Watchlist", {
+        toastId: customId,
+      });
+    } else {
+      setWatchList((prev) => [
+        ...prev,
+        {
+          id: coin.id,
+          name: coin.name,
+          img: coin.image,
+          symbol: coin.symbol,
+          price: coin.current_price,
+        },
+      ]);
+      toast("Coin added to the Watchlist successfully!", {
+        toastId: customId,
+      });
+    }
   };
 
   return (
@@ -25,7 +33,7 @@ const Watch = ({ coin }) => {
       <button onClick={onClick}>Watch</button>
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={2000}
         limit={1}
         hideProgressBar={false}
         newestOnTop={false}
