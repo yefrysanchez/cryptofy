@@ -4,7 +4,8 @@ import Watch from "./Watch";
 import { apiContext } from "../context/ApiContext";
 
 const TableRow = () => {
-  const { coins } = useContext(apiContext);
+  const { coins, btc } = useContext(apiContext);
+
 
 
 
