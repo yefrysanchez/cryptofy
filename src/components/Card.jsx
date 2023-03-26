@@ -47,7 +47,7 @@ const Card = () => {
           ))
         )
       );
-  }, []);
+  }, [btc]);
 
   return <>{coins}</>;
 };
