@@ -4,7 +4,7 @@ import WatchList from "../components/WatchList";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 import axios from "axios";
 import DOMPurify from "dompurify";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../context/WatchListContext";
 
 const CoinPage = () => {
@@ -21,6 +21,9 @@ const CoinPage = () => {
 
   return (
     <div className="pb-8">
+      <div className="ml-auto mt-4 w-44  text-center text-xl font-bold">
+        <Link className="bg-red-700 rounded-lg p-4 inline-block" to='/' >Go Home</Link>
+      </div>
       <Context>
         <WatchList />
       </Context>
