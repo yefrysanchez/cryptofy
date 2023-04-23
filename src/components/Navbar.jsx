@@ -1,15 +1,13 @@
 import Banner from "./Banner";
-import { Link } from "react-router-dom";
 import SearchModal from "./SearchModal";
 import { useRef, useState } from "react";
-import Signin from "./Signin";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
   const [searching, setSearching] = useState(false);
-  const [isLogged, setIsLogged] = useState(false);
-  const [showSignIn, setShowSignIn] = useState(false);
   const [coin, setCoin] = useState("");
   const inputRef = useRef();
+  const {loginWithRedirect, logout, isAuthenticated, user} = useAuth0()
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -42,23 +40,23 @@ const Navbar = () => {
           </form>
 
           <div className="flex gap-2">
-            {isLogged ? (
+            {isAuthenticated ? (
               <div className="flex mt-2 items-center gap-2">
                 <div className="rounded-full h-8 w-8 overflow-hidden">
                   <img
                     className="w-full h-full  object-cover"
-                    src="https://media.istockphoto.com/id/1441927607/vector/man-avatar-icon.jpg?s=612x612&w=0&k=20&c=X0mHlJSSaSrnWl9jQ7fYoR0Sy3feZ_QyxNKDdz9E11w="
-                    alt=""
+                    src={user.picture}
+                    alt={`${user.name}'s picture`}
                   />
                 </div>
-                <h2 className="font-bold">Yefry Sanchez</h2>
-                <p className="text-red-400 cursor-pointer hover:underline">
+                <h2 className="font-bold">{user.name}</h2>
+                <p onClick={() => logout({returnTo: window.location.origin})} className="text-red-400 cursor-pointer hover:underline">
                   Log out
                 </p>
               </div>
             ) : (
-              <div onClick={() => setShowSignIn(true)} className="bg-indigo-600 mt-2 cursor-pointer hover:bg-indigo-700 duration-200 font-bold text-white flex items-center py-1 px-4 rounded-lg">
-                <h2>Sign in</h2>
+              <div onClick={() => loginWithRedirect()} className="bg-indigo-600 mt-2 cursor-pointer hover:bg-indigo-700 duration-200 font-bold text-white flex items-center py-1 px-4 rounded-lg">
+                <h2>Log in</h2>
               </div>
             )}
           </div>
@@ -67,7 +65,6 @@ const Navbar = () => {
       <Banner />
 
       {searching && <SearchModal close={setSearching} name={coin} />}
-      {showSignIn && <Signin close={setShowSignIn} />}
     </header>
   );
 };

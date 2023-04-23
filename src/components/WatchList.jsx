@@ -47,7 +47,7 @@ const WatchList = () => {
                   <div>
                     <p>
                       $
-                      {card.price
+                      {card.price && card.price
                         .toFixed(2)
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
