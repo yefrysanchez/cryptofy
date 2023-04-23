@@ -73,14 +73,14 @@ const TableRow = () => {
           </tr>
         ))
       ) : (
-        <div className="absolute my-8 bg-red-800 rounded-lg p-4">
-          <h3 className="font-bold text-xl">API calls limit</h3>
-          <p>
+        <tr className="absolute my-8 bg-red-800 rounded-lg p-4">
+          <th className="font-bold text-xl">API calls limit</th>
+          <th>
             CoinGecko API has a rate limit of 10-30 calls per minute, if you
             exceed that limit you will be blocked until the next 1 minute
             window. Please try again in 1 minute.
-          </p>
-        </div>
+          </th>
+        </tr>
       )}
     </>
   );

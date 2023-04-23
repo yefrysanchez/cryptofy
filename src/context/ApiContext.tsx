@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
-export const apiContext = createContext();
+export const apiContext = createContext("coin");
 
 export const Data = ({ children }: any) => {
   const [coins, setCoins] = useState();
