@@ -6,12 +6,9 @@ import { apiContext } from "../context/ApiContext";
 const TableRow = () => {
   const { coins, btc } = useContext(apiContext);
 
-
-
-
   return (
     <>
-      {coins &&
+      {coins ? (
         coins.map((coin) => (
           <tr
             key={coin.id}
@@ -74,7 +71,17 @@ const TableRow = () => {
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </td>
           </tr>
-        ))}
+        ))
+      ) : (
+        <div className="absolute my-8 bg-red-800 rounded-lg p-4">
+          <h3 className="font-bold text-xl">API calls limit</h3>
+          <p>
+            CoinGecko API has a rate limit of 10-30 calls per minute, if you
+            exceed that limit you will be blocked until the next 1 minute
+            window. Please try again in 1 minute.
+          </p>
+        </div>
+      )}
     </>
   );
 };
